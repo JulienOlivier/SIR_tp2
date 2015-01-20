@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,6 +19,7 @@ public class classMetierHome {
 	private String adresse;
 	private int superficie;
 	private String IP;
+	private classMetierPerson personne;
 	
 	public String getAdresse() {
 		return adresse;
@@ -79,5 +81,12 @@ public class classMetierHome {
 	public classMetierHome(){
 		this.heatrs = new ArrayList<Heater>();
 		this.devices = new ArrayList<ElectronicDevice>();
+	}
+	@ManyToOne
+	public classMetierPerson getPersonne(){
+		return personne;
+	}
+	public void setPersonne (classMetierPerson personne){
+		this.personne = personne;
 	}
 }

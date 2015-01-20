@@ -80,7 +80,7 @@ public class classMetierPerson {
 	 */
 	private List<classMetierHome> homes;
 	private List<classMetierPerson> listAmis;
-	@OneToMany(mappedBy="Personne", cascade=CascadeType.PERSIST)
+	@OneToMany(mappedBy="personne")
 	public List<classMetierHome> getHomes() {
 		return homes;
 	}
