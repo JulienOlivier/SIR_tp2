@@ -39,8 +39,11 @@ public class JpaTest {
 		tx.commit();
 
 		// TODO run request
+		tx.begin();
 		test.listHome();
+		tx.commit();
 
+		manager.close();
 		System.out.println(".. done");
 	}
 
@@ -64,9 +67,14 @@ public class JpaTest {
 				manager.persist(p3);
 	}
 	private void listHome(){
-		List<classMetierHome> listHome = manager.createQuery("SELECT h FROM Maison h",classMetierHome.class).getResultList();
+		List<classMetierPerson> listPersonne = manager.createQuery("Select h From classMetierPerson h", classMetierPerson.class).getResultList();
+		System.out.println("nb ligne : "+listPersonne.size());
+		for(classMetierPerson next : listPersonne)
+			System.out.println("-> "+next.getId());
+		System.out.println("*****************************");
+		List<classMetierHome> listHome = manager.createQuery("Select h From classMetierHome h", classMetierHome.class).getResultList();
 		System.out.println("nb ligne : "+listHome.size());
 		for(classMetierHome next : listHome)
-			System.out.println("-> "+next);
+			System.out.println("-> "+next.getId());
 	}
 }

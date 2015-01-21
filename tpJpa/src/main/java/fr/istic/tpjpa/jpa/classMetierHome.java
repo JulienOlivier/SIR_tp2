@@ -57,10 +57,9 @@ public class classMetierHome {
 	/*
 	 * Jointures
 	 */
-	//*
 	private List<Heater> heatrs;
-	private List<ElectronicDevice> devices;
-	//*/
+	private List<ElectronicDevice> devices; 
+	
 	@OneToMany
 	public List<Heater> getHeatrs() {
 		return heatrs;
@@ -75,6 +74,7 @@ public class classMetierHome {
 	public void setDevices(List<ElectronicDevice> devices) {
 		this.devices = devices;
 	}
+	
 	/*
 	 * Constructeurs de la classe
 	 */
