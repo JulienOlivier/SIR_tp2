@@ -57,30 +57,21 @@ public class classMetierHome {
 	/*
 	 * Jointures
 	 */
-	private List<Heater> heatrs;
-	private List<ElectronicDevice> devices; 
+	private List<SmartDevice> SmartDevice;
 	
 	@OneToMany
-	public List<Heater> getHeatrs() {
-		return heatrs;
+	public  List<SmartDevice> getSmartDevice() {
+		return SmartDevice;
 	}
-	public void setHeatrs(List<Heater> heatrs) {
-		this.heatrs = heatrs;
-	}
-	@OneToMany
-	public List<ElectronicDevice> getDevices() {
-		return devices;
-	}
-	public void setDevices(List<ElectronicDevice> devices) {
-		this.devices = devices;
+	public void setSmartDevice(List<SmartDevice> SmartDevice) {
+		this.SmartDevice = SmartDevice;
 	}
 	
 	/*
 	 * Constructeurs de la classe
 	 */
 	public classMetierHome(){
-		this.heatrs = new ArrayList<Heater>();
-		this.devices = new ArrayList<ElectronicDevice>();
+		this.SmartDevice = new ArrayList<SmartDevice>();
 	}
 	@ManyToOne
 	public classMetierPerson getPersonne(){

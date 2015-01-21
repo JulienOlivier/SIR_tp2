@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
 
 public class JpaTest {
 
@@ -17,7 +18,13 @@ public class JpaTest {
 	classMetierPerson p1 = new classMetierPerson();
 	classMetierPerson p2 = new classMetierPerson();
 	classMetierPerson p3 = new classMetierPerson();
-
+	CriteriaBuilder criteriaBuilder = manager.getCriteriaBuilder();
+	/*CriteriaQuery<Integer.class> query = criteriaBuilder.createQuery(Integer.class);
+	CriteriaQuery<Integer.class> query = criteriaBuilder.createQuery(Integer.class);
+	Root<B.class> from = query.from(Bean.class);
+	query.select(from.get("a"))
+	     .where(from.get("a").in(1, 2, 3, 4));
+	*/
 	public JpaTest(EntityManager manager) {
 		this.manager = manager;
 	}

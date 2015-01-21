@@ -5,22 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Heater {
-	/*
-	 * Génération de l'ID
-	 */
-	private Long id;
+public class Heater extends SmartDevice{
+	
+	private String name;
+
 	
 	@Id
 	@GeneratedValue
 	public Long getId(){
-		return id;
+		return super.getId();
 	}
 	public void setId(Long id){
-		this.id = id;
+		super.setId(id);
 	}
 	
 	public Heater(){
-		
+		super();
 	}
 }
